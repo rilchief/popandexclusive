@@ -1,130 +1,108 @@
 <style>
 #myHeader {
-  background-image: url("ground.jpg");
-  color: white;
+  background-image:url("light.jpg"); /* Specific to index.html header */
+  color: black; /* Text color for this header */
   padding: 40px;
   text-align: center;
-} 
-</style>
-
-<h1 id="myHeader">My Header</h1>
-body, html {
-  height: 100%;
-  font-family: Microsoft JhengHei;
-
-	font: 20px;
-	
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: BLACK;
-  	font-family: Microsoft JhengHei;
 }
 
-* {
-  box-sizing: border-box;
+#myHeader img {
+  width: 50%; /* Was attribute width=50% */
+  height: auto; /* Maintain aspect ratio, height=50% might distort */
 }
 
-
-	
-}
-h1 {
-	font-family: Microsoft JhengHei;
-	text-align: center;
-	border: 1px white;
-  outline-style: solid;
-  outline-color: none;
-  outline-width: medium
-}
-  
-
-p {
-	font-family: Microsoft JhengHei;
-
-	font: 20px;
-	
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: BLACK;
-  	font-family: Microsoft JhengHei;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
+.city { /* This class was in index.html's style block, keep if used elsewhere, or remove if not */
+  background-color: tomato;
   color: white;
-  text-align: center;
-  padding: 10px 20px;
-  text-decoration:None;
-  	font-family: Microsoft JhengHei;
+  padding: 10px;
+} 
+
+body {
+  /* Applying light.jpg background specifically for index.html via a class or ID might be better if other pages have different backgrounds. */
+  /* For now, this will apply to all pages unless overridden. */
+  /* Consider adding this to a class like .index-body and applying that class to index.html's body if other pages differ. */
+  background-image: url("light.jpg");
+  font-family: Microsoft JhengHei; /* Moved from a duplicate body rule */
+  height: 100%; /* Moved from a duplicate body rule */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body takes at least full viewport height */
+  margin: 0;
 }
 
-li a:hover:not(.active) {
-  background-color:red;
+.site-header {
+    background-color: #222; /* Dark background for header */
+    padding: 10px 20px;
+    display: flex; /* Using flexbox for header layout */
+    justify-content: space-between; /* Space out logo and nav */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-.active {
-  background-color: BLACK;
+.logo-container img#siteLogo {
+    max-height: 60px; /* Adjust logo size */
+    /* Removed h1 wrapping logo, img alt is sufficient */
 }
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Using flexbox for nav items */
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.main-nav ul li {
+    /* margin-left: 10px; Spacing handled by justify-content or gap in flex container */
+}
+
+.main-nav ul li a,
+.main-nav ul li .dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li .dropbtn:hover,
+.main-nav ul li a.active {
+    background-color: #555; /* Darker background on hover/active */
+    border-radius: 4px;
+}
+
+/* Navbar styles */
 .navbar {
-  width: 100%;
-  background-color: #555;
-  overflow: auto;
+  overflow: hidden;
+  background-color: #333; /* This is different from the main ul background-color: BLACK; Reconcile if this is for the same nav */
+  font-family: Microsoft JhengHei;
+  width: 100%; /* Added from a previous .navbar rule */
+  /* overflow: auto; */ /* From previous rule, 'hidden' is also here, choose one or clarify intent */
 }
 
-/* Navbar links */
 .navbar a {
   float: left;
-  text-align: center;
-  padding: 12px;
+  font-size: 16px; /* A previous .navbar a had 17px, this one will take precedence if it's later */
   color: white;
+  text-align: center;
+  padding: 14px 16px; /* A previous .navbar a had 12px padding */
   text-decoration: none;
-  font-size: 17px;
+  font-family: Microsoft JhengHei;
 }
 
-/* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
-}
-
-/* Current/active navbar link */
-.active {
-  background-color: #4CAF50;
+  background-color: #000; /* A previous rule was .navbar a:hover, .dropdown:hover .dropbtn { background-color: red; } Reconcile these hover effects */
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
-  .navbar a {
+  .navbar a { /* This .navbar class seems to be from a generic example, ensure it's actually used or reconcile with your existing nav */
     float: none;
     display: block;
   }
 } 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Microsoft JhengHei;
-}
-
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: Microsoft JhengHei;
-}
 
 /* The dropdown container */
 .dropdown {
@@ -177,15 +155,7 @@ li a:hover:not(.active) {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-} body, html {
-    height: 100%;
-}
-body, html {
-    height: 100%;
-}
-ody, html {
-    height: 100%;
-}
+} 
 
 /* The hero image */
 .hero-image {
@@ -210,13 +180,574 @@ ody, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+} 
 
 table, th, td{
 	background-color:Gold;
-font-family: Microsoft JhengHei;
+  font-family: Microsoft JhengHei;
 }
-ul {list-style-type: none;}
-body {font-family: Microsoft JhengHei;}
+
+/* Removed duplicate ul {list-style-type: none;} and body {font-family: Microsoft JhengHei;} */
+
+/* New styles from index.html refactoring & general cleanup */
+.text-white {
+  color: white !important; /* Important to override other text colors if necessary, e.g. h1 default color */
+}
+
+.text-center { /* This class was already present from African music.html changes */
+  text-align: center;
+}
+
+.media-center { /* This class was already present */
+  text-align: center; 
+}
+
+.media-center iframe { /* This class was already present */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.zeno-link {
+  display: block;
+  font-size: 0.9em;
+  line-height: 10px;
+  color: white; /* Added to make it visible on dark background */
+  text-align: center; /* To match the iframe centering */
+  margin-top: 5px; /* Add some space */
+}
+
+.icon-youtube-red {
+  color: red !important; 
+}
+
+.nav-float-right {
+  float: right;
+}
+
+.button-large-font {
+  font-size: 20px;
+}
+
+.icon-email-black {
+  color: black !important; 
+}
+
+/* Styles for About Afrobeat page */
+.about-afrobeat-body {
+    background-image: url("felakuti.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; /* Optional: if you want the background to not scroll with content */
+    color: white; /* Default text color for this page, can be overridden by more specific rules */
+}
+
+/* General text styling for content paragraphs on pages with dark/image backgrounds */
+.page-content-text p,
+.page-content-text article {
+    /* Add padding or margins if needed for better readability */
+    /* Example: padding: 10px; */
+}
+
+.section-subtitle {
+    font-size: 1.5em; /* Example size, adjust as needed */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* color: white; /* Already handled by text-white or .about-afrobeat-body color */
+}
+
+.external-links-list {
+    list-style-type: none; /* Removes bullets */
+    padding-left: 0; /* Removes default padding */
+    margin-top: 30px;
+}
+
+.external-links-list li a {
+    color: white; /* Ensure links are visible */
+    text-decoration: underline; /* Optional: common for links */
+}
+
+.external-links-list li a:hover {
+    color: #ddd; /* Lighter color on hover */
+}
+
+/* Styles for Afrobeat Musicians page */
+.page-afrobeat-musicians {
+    background-image: url('light.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.musician-section {
+    margin-bottom: 40px; /* Adds space between musician sections */
+}
+
+.musician-bio {
+    max-width: 800px; /* Limits the width of the bio for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Adds some padding on the sides */
+}
+
+.iframe-gallery {
+    display: flex; /* Enables flexbox for layout */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center; /* Centers items on the line */
+    gap: 20px; /* Adds space between iframes */
+}
+
+.iframe-gallery iframe {
+    max-width: 100%; /* Ensures iframes are responsive */
+    border: 3px solid #ddd; /* Optional: adds a border around iframes */
+    border-radius: 5px; /* Optional: rounds the corners of the border */
+}
+
+/* Styles for Bookings page */
+.page-bookings {
+    background-image: url('sh.jpg'); /* Specific background for bookings page */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333; /* Default text color for better readability if needed */
+}
+
+.quote-section blockquote {
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-left: 5px solid #eee;
+    background-color: rgba(0,0,0,0.3); /* Slight dark overlay for quote readability */
+}
+
+.booking-actions .button-link,
+.booking-actions .button-styled,
+.artist-info-form .button-styled {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0ad4e; /* A warm, inviting color */
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-actions .button-link:hover,
+.booking-actions .button-styled:hover,
+.artist-info-form .button-styled:hover {
+    background-color: #ec971f; /* Darker shade on hover */
+}
+
+.styled-form div {
+    margin-bottom: 15px;
+}
+
+.styled-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.styled-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px; /* Limit input width */
+    box-sizing: border-box;
+}
+
+.artist-table-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.styled-table {
+    width: 100%;
+    max-width: 800px; /* Limit table width */
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for table readability */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.styled-table caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white; /* Caption color for visibility */
+    font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    color: #333; /* Dark text for table content */
+}
+
+.styled-table th {
+    background-color: #f2f2f2; /* Light grey for table headers */
+    font-weight: bold;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight on hover */
+}
+
+/* Styles for Mail page */
+.page-mail {
+    /* The background image 'felakuti.jpg' will be applied to the hero section specifically */
+    color: #333; /* Default text color */
+}
+
+.hero-image-mail {
+    background-image: url('felakuti.jpg');
+    height: 50vh; /* Adjust height as needed, 50% of viewport height */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-image-mail .hero-text {
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent overlay for text readability */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero-image-mail h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero-image-mail p {
+    font-size: 1.5em;
+}
+
+.contact-form-section {
+    padding: 40px 20px;
+    background-color: rgba(0,0,0,0.6); /* Darker overlay for the form section for contrast */
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.mail-form input[type="text"],
+.mail-form input[type="email"],
+.mail-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 500px; /* Limit input width */
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Add space below each input/textarea */
+}
+
+.mail-form textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+.mail-form .button-styled {
+    margin-right: 10px;
+}
+
+.mail-form .button-reset {
+    background-color: #777; /* Different color for reset button */
+}
+
+.mail-form .button-reset:hover {
+    background-color: #555;
+}
+
+.page-home {
+    background-image: url('ground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-grow: 1; /* Allows main content to fill available space */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+}
+
+.home-content {
+    flex-grow: 1; /* Allows this section to expand */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+}
+
+.hero-section,
+.tagline-section,
+.media-player-section {
+    width: 100%;
+    max-width: 960px; /* Max width for content sections */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background for readability */
+    border-radius: 8px;
+}
+
+.media-player-section .zeno-player {
+    border: 3px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Make iframe responsive */
+    max-width: 600px; /* Max width for the player */
+    height: 150px; /* Adjust height as needed */
+}
+
+.zeno-link {
+    display: block;
+    margin-top: 10px;
+    color: #eee;
+    text-decoration: none;
+}
+
+.zeno-link:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    background-color: #222; /* Consistent with header */
+    color: white;
+    padding: 20px;
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* About Afrobeat specific styles */
+.page-about-afrobeat .site-header {
+    /* Styles specific to the header on the About Afrobeat page, if needed */
+    /* For now, it will inherit .site-header styles */
+}
+
+.hero-image-about {
+    background-image: url('fela.jpg'); /* Specific hero for this page */
+    height: 60vh; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px; /* Space below hero */
+}
+
+.hero-image-about .hero-text {
+    background-color: rgba(0,0,0,0.6); /* Darker overlay for text readability */
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.hero-image-about h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.4em;
+}
+
+.hero-image-about p {
+    font-size: 1.4em;
+}
+
+.about-afrobeat-content {
+    padding: 20px;
+    flex-grow: 1; /* Allow content to fill space if page is short */
+}
+
+.intro-section,
+.fela-bio-section,
+.media-gallery-section,
+.external-links-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5); /* Consistent semi-transparent background */
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f0ad4e; /* Accent color for titles */
+}
+
+.section-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #eee; /* Lighter color for subtitles */
+}
+
+.page-content-text {
+    line-height: 1.7;
+    font-size: 1.1em;
+    max-width: 800px; /* Improve readability for text blocks */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fela-bio-section {
+    /* Specific styles for Fela's bio if needed */
+}
+
+.media-gallery-section .media-item {
+    margin-bottom: 30px;
+}
+
+.media-gallery-section .media-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 5px;
+    border: 2px solid #444;
+}
+
+.media-gallery-section .media-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.external-links-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.external-links-list li {
+    margin-bottom: 10px;
+}
+
+.external-links-list li a {
+    color: #f0ad4e; /* Accent color for links */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.external-links-list li a:hover {
+    background-color: #f0ad4e;
+    color: #222;
+    text-decoration: none;
+}
+
+/* Ensure .about-afrobeat-body inherits flex properties if not already covered by body tag */
+.page-about-afrobeat {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #333; /* Fallback background, image is in .about-afrobeat-body */
+}
+
+/* The class .about-afrobeat-body was used in HTML, let's ensure its background is applied */
+/* This might be redundant if .page-about_afrobeat is the main body class now */
+/* For consistency, I'll assume .page-about_afrobeat is the primary body class */
+
+/* Removing the old .about_afrobeat_body specific background if .page-about_afrobeat is used for the body tag */
+/* .about-afrobeat-body {
+    background-image: url('mr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+} */
+
+/* Instead, apply background to the new body class if needed, or a wrapper div */
+/* If mr.jpg is the intended background for the whole page: */
+.page-about-afrobeat {
+    background-image: url('mr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    display: flex; /* Re-declare if overriding */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styles for African Music Page */
+.page-african-music {
+    background-image: url('mr.jpg'); /* Using the same background as About Afrobeat for now */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.african-music-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.page-title-header {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.6); /* Overlay for title readability */
+    border-radius: 8px;
+}
+
+.page-title-header h1 {
+    font-size: 2.2em;
+    color: #f0ad4e; /* Accent color for main page title */
+}
+
+.video-list-section {
+    /* This section will hold all video entries */
+}
+
+.video-entry {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.video-title {
+    font-size: 1.8em;
+    color: #f0ad4e; /* Accent color for video titles */
+    margin-bottom: 8px;
+}
+
+.video-origin {
+    font-style: italic;
+    color: #ccc; /* Lighter color for origin text */
+    margin-bottom: 15px;
+}
+
+/* .media-embed-container is already defined and should apply here for responsive iframes */
+
+.video-description {
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #eee;
+}
 
 
 
