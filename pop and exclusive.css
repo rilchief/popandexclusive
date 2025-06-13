@@ -1,16 +1,4 @@
 <style>
-#myHeader {
-  background-image:url("light.jpg"); /* Specific to index.html header */
-  color: black; /* Text color for this header */
-  padding: 40px;
-  text-align: center;
-}
-
-#myHeader img {
-  width: 50%; /* Was attribute width=50% */
-  height: auto; /* Maintain aspect ratio, height=50% might distort */
-}
-
 .city { /* This class was in index.html's style block, keep if used elsewhere, or remove if not */
   background-color: tomato;
   color: white;
@@ -18,16 +6,21 @@
 } 
 
 body {
-  /* Applying light.jpg background specifically for index.html via a class or ID might be better if other pages have different backgrounds. */
-  /* For now, this will apply to all pages unless overridden. */
-  /* Consider adding this to a class like .index-body and applying that class to index.html's body if other pages differ. */
-  background-image: url("light.jpg");
-  font-family: Microsoft JhengHei; /* Moved from a duplicate body rule */
-  height: 100%; /* Moved from a duplicate body rule */
+  /* Applying a clean, dark gradient background */
+  background-image: linear-gradient(to bottom right, #333333, #1a1a1a);
+  /* background-image: url('0.png'); /* Reverted */
+  /* background-repeat: no-repeat; /* Reverted */
+  /* background-position: center center; /* Reverted */
+  /* background-attachment: fixed; /* Reverted */
+  /* background-size: contain; /* Reverted */
+  /* background-color: #111111; */ /* Reverted, gradient is the background */
+  font-family: Microsoft JhengHei;
+  height: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure body takes at least full viewport height */
   margin: 0;
+  color: white; /* Default text color for better readability on dark background */
 }
 
 .site-header {
@@ -50,10 +43,6 @@ body {
     padding: 0;
     display: flex; /* Using flexbox for nav items */
     flex-wrap: wrap; /* Allow nav items to wrap */
-}
-
-.main-nav ul li {
-    /* margin-left: 10px; Spacing handled by justify-content or gap in flex container */
 }
 
 .main-nav ul li a,
@@ -234,46 +223,47 @@ table, th, td{
 }
 
 /* Styles for About Afrobeat page */
-.about-afrobeat-body {
-    background-image: url("felakuti.jpg");
+.page-about-afrobeat {
+    /* background-image: url("felakuti.jpg"); Removed to use body gradient */
     background-size: cover; 
     background-position: center; 
-    background-attachment: fixed; /* Optional: if you want the background to not scroll with content */
-    color: white; /* Default text color for this page, can be overridden by more specific rules */
+    background-attachment: fixed; 
+    color: white; 
 }
 
-/* General text styling for content paragraphs on pages with dark/image backgrounds */
-.page-content-text p,
-.page-content-text article {
-    /* Add padding or margins if needed for better readability */
-    /* Example: padding: 10px; */
+/* The hero image for About Afrobeat page - uses fela.jpg */
+.hero-image-about {
+  /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("fela.jpg");
+  /* Set a specific height */
+  height: 60vh; /* Adjusted for better visual balance */
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex; /* For centering hero-text */
+  align-items: center; /* For centering hero-text */
+  justify-content: center; /* For centering hero-text */
+  text-align: center; /* For hero-text */
+  margin-bottom: 30px; /* Space below hero */
 }
 
-.section-subtitle {
-    font-size: 1.5em; /* Example size, adjust as needed */
-    margin-top: 20px;
-    margin-bottom: 10px;
-    /* color: white; /* Already handled by text-white or .about-afrobeat-body color */
-}
-
-.external-links-list {
-    list-style-type: none; /* Removes bullets */
-    padding-left: 0; /* Removes default padding */
-    margin-top: 30px;
-}
-
-.external-links-list li a {
-    color: white; /* Ensure links are visible */
-    text-decoration: underline; /* Optional: common for links */
-}
-
-.external-links-list li a:hover {
-    color: #ddd; /* Lighter color on hover */
-}
+.hero-image-about .hero-text {
+  /* text-align: center; Already set in parent */
+  /* position: absolute; Not needed with flex centering */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  background-color: rgba(0,0,0,0.5); /* Optional: slight background for text if image is too busy */
+  padding: 20px;
+  border-radius: 8px;
+} 
 
 /* Styles for Afrobeat Musicians page */
 .page-afrobeat-musicians {
-    background-image: url('light.jpg');
+    /* background-image: url('light.jpg'); Removed to use body gradient */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -305,11 +295,11 @@ table, th, td{
 
 /* Styles for Bookings page */
 .page-bookings {
-    background-image: url('sh.jpg'); /* Specific background for bookings page */
+    /* background-image: url('sh.jpg'); Removed to use body gradient */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: #333; /* Default text color for better readability if needed */
+    /* color: #333; Changed to white or ensure it inherits from body */
 }
 
 .quote-section blockquote {
@@ -412,7 +402,7 @@ table, th, td{
 }
 
 .hero-image-mail {
-    background-image: url('felakuti.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('felakuti.jpg'); /* Added overlay for better text contrast */
     height: 50vh; /* Adjust height as needed, 50% of viewport height */
     background-position: center;
     background-repeat: no-repeat;
@@ -477,7 +467,7 @@ table, th, td{
 }
 
 .page-home {
-    background-image: url('ground.jpg');
+    /* background-image: url('ground.jpg'); Removed to use body gradient */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -576,7 +566,6 @@ table, th, td{
 }
 
 .intro-section,
-.fela-bio-section,
 .media-gallery-section,
 .external-links-section {
     margin-bottom: 40px;
@@ -605,8 +594,9 @@ table, th, td{
     margin-right: auto;
 }
 
-.fela-bio-section {
-    /* Specific styles for Fela's bio if needed */
+/* Media Gallery Section - General Styling */
+.media-gallery-section {
+    margin-bottom: 40px;
 }
 
 .media-gallery-section .media-item {
@@ -657,7 +647,7 @@ table, th, td{
 }
 
 /* Ensure .about-afrobeat-body inherits flex properties if not already covered by body tag */
-.page-about-afrobeat {
+.page-about_afrobeat {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -668,7 +658,7 @@ table, th, td{
 /* This might be redundant if .page-about_afrobeat is the main body class now */
 /* For consistency, I'll assume .page-about_afrobeat is the primary body class */
 
-/* Removing the old .about_afrobeat_body specific background if .page-about_afrobeat is used for the body tag */
+/* Removing the old .about_afrobeat_body specific background if .page-about_afrobeat is used */
 /* .about-afrobeat-body {
     background-image: url('mr.jpg'); 
     background-size: cover; 
@@ -678,7 +668,7 @@ table, th, td{
 
 /* Instead, apply background to the new body class if needed, or a wrapper div */
 /* If mr.jpg is the intended background for the whole page: */
-.page-about-afrobeat {
+.page-about_afrobeat {
     background-image: url('mr.jpg'); 
     background-size: cover; 
     background-position: center; 
@@ -690,64 +680,27 @@ table, th, td{
 
 /* Styles for African Music Page */
 .page-african-music {
-    background-image: url('mr.jpg'); /* Using the same background as About Afrobeat for now */
+    /* background-image: url('mr.jpg'); */ /* Removed to use body gradient */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    color: white; /* Ensure text is white for readability */
 }
 
-.african-music-content {
-    padding: 20px;
-    flex-grow: 1;
+.page-african-music h1,
+.page-african-music h2,
+.page-african-music h3,
+.page-african-music p,
+.page-african-music li {
+    color: white; /* Ensure all common text elements are white */
 }
 
-.page-title-header {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: rgba(0,0,0,0.6); /* Overlay for title readability */
-    border-radius: 8px;
-}
+/* Remove any specific rules for .page-african-music that might still reference mr.jpg or set conflicting text colors */
+/* For example, if there were rules like: */
+/* .page-african-music .some-class { background-image: url('mr.jpg'); } */
+/* These should be removed or updated. */
 
-.page-title-header h1 {
-    font-size: 2.2em;
-    color: #f0ad4e; /* Accent color for main page title */
-}
-
-.video-list-section {
-    /* This section will hold all video entries */
-}
-
-.video-entry {
-    background-color: rgba(0,0,0,0.5);
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border: 1px solid #444;
-}
-
-.video-title {
-    font-size: 1.8em;
-    color: #f0ad4e; /* Accent color for video titles */
-    margin-bottom: 8px;
-}
-
-.video-origin {
-    font-style: italic;
-    color: #ccc; /* Lighter color for origin text */
-    margin-bottom: 15px;
-}
-
-/* .media-embed-container is already defined and should apply here for responsive iframes */
-
-.video-description {
-    margin-top: 15px;
-    line-height: 1.6;
-    font-size: 1em;
-    color: #eee;
-}
+/* Ensure any empty ruleset
 
 
 
