@@ -10,97 +10,104 @@
 </head>
 <body class="page-bookings">
 
-<nav>
-    <ul>
-        <li><a href="index.html"><i class="fa fa-fw fa-home"></i> HOME</a></li>
-        <li><a href="About Afrobeat.html">ABOUT AFROBEAT</a></li>
-        <li><a href="afrobeat musicians.html">AFROBEAT MUSICIANS</a></li>
-        <li><a href="African music.html">AFRICAN MUSIC</a></li>
-        <li><a href="BOOKINGS.html" class="active">BOOKINGS</a></li>
-        <li class="dropdown">
-            <button class="dropbtn"><i class='fab fa-youtube icon-youtube-red'></i>EXTRAS</button>
-            <div class="dropdown-content">
-                <a href="https://www.youtube.com/results?search_query=chuckie+online" target="_blank" rel="noopener"><i class='fab fa-youtube icon-youtube-red'></i>CHUCKIE PODCASTS</a>
-                <a href="https://www.youtube.com/results?search_query=hot+97+" target="_blank" rel="noopener"><i class='fab fa-youtube icon-youtube-red'></i>HOT 97</a>
-                <a href="https://www.youtube.com/results?search_query=bbc1xtra" target="_blank" rel="noopener"><i class='fab fa-youtube icon-youtube-red'></i>BBC 1XTRA</a>
-            </div>
-        </li>
-        <li class="dropdown nav-float-right">
-            <button class="dropbtn"><i class="far fa-envelope"></i> HELP CENTER</button>
-            <div class="dropdown-content">
-                <a href="https://www.instagram.com/ril.chief/" target="_blank" rel="noopener"><i class='fab fa-instagram'></i> INSTAGRAM</a>
-                <a href="https://twitter.com/rilchief_pepper" target="_blank" rel="noopener"><i class="fa fa-twitter"></i> TWITTER</a>
-                <a href="tel:07853631263"><button class="button-large-font"><i class='fas fa-phone'></i> 07853631263</button></a>
-                <a href="mail.html"><i class='far fa-envelope icon-email-black'></i><b>E-MAIL</b></a>
-            </div>
-        </li>
-    </ul>
-</nav>
-
-<header class="text-center">
-    <h1 class="text-white">Bookings &amp; Artist Information</h1>
+<header class="site-header">
+    <div class="logo-container">
+        <img src="0.png" alt="Pop and Exclusive Logo" id="siteLogo">
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html"><i class="fa fa-fw fa-home"></i> HOME</a></li>
+            <li><a href="About Afrobeat.html">ABOUT AFROBEAT</a></li>
+            <li><a href="afrobeat musicians.html">AFROBEAT MUSICIANS</a></li>
+            <li><a href="African music.html">AFRICAN MUSIC</a></li>
+            <li><a href="BOOKINGS.html" class="active">BOOKINGS</a></li>
+            <li class="dropdown">
+                <button class="dropbtn"><i class='fab fa-youtube icon-youtube-red'></i>EXTRAS</button>
+                <div class="dropdown-content">
+                    <a href="https://www.youtube.com/results?search_query=chuckie+online" target="_blank" rel="noopener"><i class='fab fa-youtube icon-youtube-red'></i>CHUCKIE PODCASTS</a>
+                    <a href="https://www.youtube.com/results?search_query=hot+97+" target="_blank" rel="noopener"><i class='fab fa-youtube icon-youtube-red'></i>HOT 97</a>
+                    <a href="https://www.youtube.com/results?search_query=bbc1xtra" target="_blank" rel="noopener"><i class='fab fa-youtube icon-youtube-red'></i>BBC 1XTRA</a>
+                </div>
+            </li>
+            <li class="dropdown nav-float-right">
+                <button class="dropbtn"><i class="far fa-envelope"></i> HELP CENTER</button>
+                <div class="dropdown-content">
+                    <a href="https://www.instagram.com/ril.chief/" target="_blank" rel="noopener"><i class='fab fa-instagram'></i> INSTAGRAM</a>
+                    <a href="https://twitter.com/rilchief_pepper" target="_blank" rel="noopener"><i class="fa fa-twitter"></i> TWITTER</a>
+                    <a href="tel:07853631263"><button class="button-large-font"><i class='fas fa-phone'></i> 07853631263</button></a>
+                    <a href="mail.html"><i class='far fa-envelope icon-email-black'></i><b>E-MAIL</b></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <main>
-    <section class="quote-section text-center">
-        <h2 class="text-white">POP AND EXCLUSIVE LIFE QUOTE:</h2>
+    <section class="page-header text-center" role="banner" aria-labelledby="bookings-main-heading">
+        <h1 id="bookings-main-heading" class="text-white">Bookings &amp; Artist Information</h1>
+    </section>
+
+    <section class="content-card quote-section text-center" aria-labelledby="bookings-quote-heading">
+        <h2 id="bookings-quote-heading" class="text-white">POP AND EXCLUSIVE LIFE QUOTE:</h2>
         <blockquote class="text-white">
             Music is a lifestyle; music and entertainment is one of the few things in life that brings people together.
         </blockquote>
     </section>
 
-    <section class="booking-actions text-center">
-        <h2 class="text-white">Booking Options</h2>
-        <p><a href="http://www.stardombookings.com/" class="button-link" target="_blank" rel="noopener">CLICK TO BOOK NOW</a></p>
+    <section class="content-card booking-actions text-center" aria-labelledby="booking-options-heading">
+        <h2 id="booking-options-heading" class="text-white">Booking Options</h2>
+        <p><a href="http://www.stardombookings.com/" class="button-styled" target="_blank" rel="noopener">CLICK TO BOOK NOW</a></p>
         <p><button type="button" class="button-styled">ATTEND POPSHOW</button></p>
     </section>
 
-    <section class="artist-info-form text-center">
-        <h2 class="text-white">Artist Inquiry</h2>
+    <section class="content-card artist-info-form text-center" aria-labelledby="artist-inquiry-heading">
+        <h2 id="artist-inquiry-heading" class="text-white">Artist Inquiry</h2>
         <form name="artistInquiryForm" action="#" method="post" class="styled-form">
-            <div>
+            <div class="form-group">
                 <label for="musicianName" class="text-white">NAME OF THE AFROBEAT MUSICIAN:</label>
-                <input type="text" id="musicianName" name="musicianName" size="25" maxlength="50">
+                <input type="text" id="musicianName" name="musicianName" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="bestSong" class="text-white">BEST SONG:</label>
-                <input type="text" id="bestSong" name="bestSong" size="25" maxlength="50">
+                <input type="text" id="bestSong" name="bestSong" required>
             </div>
-            <div>
+            <div class="form-group">
                 <button type="submit" class="button-styled">Submit Inquiry</button>
             </div>
         </form>
     </section>
 
-    <section class="artist-table-section">
-        <h2 class="text-center text-white">AFROBEAT MUSICIAN STATS</h2>
-        <table class="styled-table">
-            <caption>Afrobeat Musicians Overview</caption>
-            <thead>
-                <tr>
-                    <th>AGE</th>
-                    <th>NAME</th>
-                    <th>WORTH</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>20</td>
-                    <td>ZLATAN</td>
-                    <td>£30,000</td>
-                </tr>
-                <tr>
-                    <td>25</td>
-                    <td>WIZKID</td>
-                    <td>£60,000</td>
-                </tr>
-                <tr>
-                    <td>30</td>
-                    <td>DBANJ</td>
-                    <td>£100,000</td>
-                </tr>
-            </tbody>
-        </table>
+    <section class="content-card artist-table-section" aria-labelledby="artist-stats-heading">
+        <h2 id="artist-stats-heading" class="text-center text-white">AFROBEAT MUSICIAN STATS</h2>
+        <div class="table-responsive">
+            <table class="styled-table">
+                <caption>Afrobeat Musicians Overview</caption>
+                <thead>
+                    <tr>
+                        <th>AGE</th>
+                        <th>NAME</th>
+                        <th>WORTH</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20</td>
+                        <td>ZLATAN</td>
+                        <td>£30,000</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>WIZKID</td>
+                        <td>£60,000</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>DBANJ</td>
+                        <td>£100,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 </main>
 

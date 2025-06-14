@@ -36,6 +36,11 @@ body {
 .logo-container img#siteLogo {
   height: 50px;
   width: auto;
+  transition: transform 0.3s ease; /* Added for potential hover effect */
+}
+
+.logo-container img#siteLogo:hover {
+  transform: scale(1.05); /* Slight zoom on logo hover */
 }
 
 /* Modern navigation */
@@ -64,17 +69,23 @@ body {
   font-family: inherit;
 }
 
-.main-nav ul li a:hover,
+/* Hover and Focus for non-active nav links and dropbuttons */
+.main-nav ul li a:not(.active):hover,
+.main-nav ul li a:not(.active):focus,
 .main-nav ul li .dropbtn:hover,
-.main-nav ul li a.active {
+.main-nav ul li .dropbtn:focus {
   background: rgba(102, 126, 234, 0.1);
   color: #667eea;
   transform: translateY(-1px);
+  outline: none; /* Remove default outline as we have custom style */
 }
 
+/* Active state for nav links */
 .main-nav ul li a.active {
   background: #667eea;
   color: white;
+  transform: translateY(-1px); /* Consistent transform */
+  outline: none; /* Remove default outline if focused while active */
 }
 
 /* Modern dropdown styles */
@@ -133,18 +144,63 @@ body {
 @media (max-width: 768px) {
   .site-header {
     padding: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack logo and nav on smaller screens */
+    align-items: flex-start; /* Align items to the start */
   }
   
   .main-nav ul {
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: flex-start; /* Align nav items to the start */
+    width: 100%; /* Make nav take full width */
     gap: 0.25rem;
   }
   
+  .main-nav ul li {
+    width: 100%; /* Make list items take full width */
+  }
+
   .main-nav ul li a,
   .main-nav ul li .dropbtn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.75rem 1rem; /* Adjusted padding for stacked items */
+    font-size: 0.9rem; /* Slightly larger for better tap targets */
+    width: 100%; /* Make links/buttons take full width */
+    justify-content: flex-start; /* Align text to the left */
+  }
+
+  .main-nav ul li .dropbtn {
+    display: flex; /* Ensure button behaves like a block for width */
+  }
+
+  .dropdown-content {
+    position: static; /* Make dropdown content flow in document */
+    box-shadow: none;
+    border: none;
+    width: 100%;
+  }
+
+  .nav-float-right {
+    float: none; /* Disable float on small screens */
+    width: 100%; /* Ensure it takes full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 0.75rem;
+  }
+
+  .main-nav ul li a,
+  .main-nav ul li .dropbtn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .button-large-font {
+    font-size: 16px; /* Reduce font size on very small screens */
+  }
+
+  .dropdown-content a {
+    padding: 0.6rem 1rem !important; /* Adjust padding for very small screens */
   }
 }
 
@@ -199,6 +255,12 @@ main {
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.media-player-section:hover, .media-player-section:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
 }
 
 .media-player-section h3 {
@@ -245,22 +307,160 @@ main {
   text-align: center;
 }
 
-/* Footer */
-.site-footer {
-  background: rgba(0, 0, 0, 0.1);
+/* Content card styling for consistent section appearance */
+.content-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
   padding: 2rem;
-  text-align: center;
-  margin-top: auto;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
 }
 
-.site-footer p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+.content-card:hover, .content-card:focus-within { /* Added focus-within for keyboard nav */
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
 }
 
-table, th, td{
-	background-color:Gold;
-  font-family: Microsoft JhengHei;
+.content-card h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.content-card p,
+.content-card blockquote,
+.content-card label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.content-card blockquote {
+  font-style: italic;
+  border-left: 4px solid #667eea;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+/* Styled buttons */
+.button-styled {
+  background-color: #667eea;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.button-styled:hover {
+  background-color: #5a6fd0;
+  transform: translateY(-2px);
+}
+
+.button-styled:focus {
+  background-color: #5a6fd0; /* Consistent with hover */
+  transform: translateY(-2px); /* Consistent with hover */
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4); /* Focus ring */
+  outline: none; /* Remove default browser outline */
+}
+
+/* Styled form elements */
+.styled-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.styled-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.styled-form input[type="text"],
+.styled-form input[type="email"],
+.styled-form textarea {
+  width: 100%;
+  max-width: 400px; /* Or 100% if you want full width within card */
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem; /* Add some space below inputs if labels are above */
+}
+
+.styled-form input[type="text"]::placeholder,
+.styled-form input[type="email"]::placeholder,
+.styled-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.styled-form input[type="text"]:focus,
+.styled-form input[type="email"]:focus,
+.styled-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+.styled-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    justify-content: center; /* Center buttons if form is text-align:center */
+}
+
+.button-reset {
+    background-color: #8A8A8A; /* A different color for reset, e.g., grey */
+}
+
+.button-reset:hover {
+    background-color: #707070;
+}
+
+/* Mail page specific hero */
+.hero-image-mail {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("felakuti.jpg");
+    height: 50vh; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.hero-image-mail .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-image-mail .hero-text p {
+    font-size: 1.2rem;
+}
+
+/* Ensure mail form elements are styled correctly */
+.mail-form input[type="text"],
+.mail-form input[type="email"],
+.mail-form textarea {
+    max-width: 100%; /* Allow them to take full width of the card */
 }
 
 /* Removed duplicate ul {list-style-type: none;} and body {font-family: Microsoft JhengHei;} */
@@ -363,6 +563,12 @@ table, th, td{
   margin-bottom: 2rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.musician-section:hover, .musician-section:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
 }
 
 .musician-section iframe {
@@ -398,6 +604,12 @@ table, th, td{
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.other-musicians:hover, .other-musicians:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
 }
 
 .other-musicians h2 {
@@ -426,6 +638,36 @@ table, th, td{
   border-radius: 12px;
   border: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the musician stats table */
+.stats-card .styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are neat */
+    margin-top: 1rem; /* Space above the table */
+}
+
+.stats-card .styled-table th,
+.stats-card .styled-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    color: white; /* Ensure text is visible */
+}
+
+.stats-card .styled-table th {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for headers */
+    font-weight: 600;
+}
+
+.stats-card .styled-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle striping for rows */
+}
+
+/* Container for table to enable horizontal scrolling on small screens */
+.table-responsive-container {
+    overflow-x: auto;
+    margin-top: 1rem; /* Consistent with table margin if used directly */
 }
 
 /* Responsive adjustments for musicians page */
@@ -714,6 +956,12 @@ table, th, td{
   margin-bottom: 2rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.musician-section:hover, .musician-section:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
 }
 
 .musician-section iframe {
@@ -749,6 +997,12 @@ table, th, td{
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.other-musicians:hover, .other-musicians:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
 }
 
 .other-musicians h2 {
@@ -777,6 +1031,36 @@ table, th, td{
   border-radius: 12px;
   border: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the musician stats table */
+.stats-card .styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are neat */
+    margin-top: 1rem; /* Space above the table */
+}
+
+.stats-card .styled-table th,
+.stats-card .styled-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    color: white; /* Ensure text is visible */
+}
+
+.stats-card .styled-table th {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for headers */
+    font-weight: 600;
+}
+
+.stats-card .styled-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle striping for rows */
+}
+
+/* Container for table to enable horizontal scrolling on small screens */
+.table-responsive-container {
+    overflow-x: auto;
+    margin-top: 1rem; /* Consistent with table margin if used directly */
 }
 
 /* Responsive adjustments for musicians page */
@@ -825,6 +1109,36 @@ table, th, td{
   .iframe-gallery iframe {
     height: 180px;
   }
+}
+
+/* Site Footer */
+.site-footer {
+  padding: 2.5rem 1rem; /* Increased padding */
+  background: rgba(0, 0, 0, 0.2); /* Darker subtle overlay for more definition */
+  margin-top: auto; /* Pushes footer to bottom if content is short */
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+}
+
+.site-footer p {
+  color: rgba(255, 255, 255, 0.85); /* Slightly brighter white for footer text */
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Ensure the body takes up at least the full viewport height */
+html, body {
+  height: 100%; /* Needed for margin-top: auto on footer to always work if body is direct flex child */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Fallback / alternative to html,body height 100% */
+}
+
+main {
+ flex: 1 0 auto; /* Allow main to grow and shrink, but not shrink below content size */
 }
 
 
