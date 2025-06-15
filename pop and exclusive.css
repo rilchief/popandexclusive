@@ -202,6 +202,36 @@ body {
   .dropdown-content a {
     padding: 0.6rem 1rem !important; /* Adjust padding for very small screens */
   }
+
+  /* Adjustments for hero and tagline sections on very small screens */
+  .hero-section h1 {
+    font-size: 2.5rem; /* Smaller h1 for mobile */
+  }
+
+  .hero-section p {
+    font-size: 1rem; /* Smaller paragraph for mobile */
+  }
+
+  .tagline-section h2 {
+    font-size: 1.5rem; /* Smaller h2 for mobile */
+  }
+
+  .media-player-section {
+    padding: 2rem 1rem; /* Reduced padding for mobile */
+  }
+
+  .media-player-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  main {
+    padding: 1rem; /* Reduced main content padding for mobile */
+  }
+
+  .site-footer p {
+    font-size: 0.8rem; /* Smaller footer text for mobile */
+  }
 }
 
 /* Modern content sections */
@@ -1108,6 +1138,857 @@ main {
   
   .iframe-gallery iframe {
     height: 180px;
+  }
+}
+
+/* About Afrobeat specific styles - removed empty ruleset */
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  
+  .tagline-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .media-player-section {
+    padding: 2rem 1rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+  
+  .tagline-section h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-image-about {
+    background-image: url('fela.jpg'); /* Specific hero for this page */
+    height: 60vh; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px; /* Space below hero */
+}
+
+.hero-image-about .hero-text {
+    background-color: rgba(0,0,0,0.6); /* Darker overlay for text readability */
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.hero-image-about h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.4em;
+}
+
+.hero-image-about p {
+    font-size: 1.4em;
+}
+
+.about-afrobeat-content {
+    padding: 20px;
+    flex-grow: 1; /* Allow content to fill space if page is short */
+}
+
+.intro-section,
+.media-gallery-section,
+.external-links-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5); /* Consistent semi-transparent background */
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f0ad4e; /* Accent color for titles */
+}
+
+.section-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #eee; /* Lighter color for subtitles */
+}
+
+.page-content-text {
+    line-height: 1.7;
+    font-size: 1.1em;
+    max-width: 800px; /* Improve readability for text blocks */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media Gallery Section - General Styling */
+.media-gallery-section {
+    margin-bottom: 40px;
+}
+
+.media-gallery-section .media-item {
+    margin-bottom: 30px;
+}
+
+.media-gallery-section .media-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 5px;
+    border: 2px solid #444;
+}
+
+.media-gallery-section .media-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.external-links-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.external-links-list li {
+    margin-bottom: 10px;
+}
+
+.external-links-list li a {
+    color: #f0ad4e; /* Accent color for links */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.external-links-list li a:hover {
+    background-color: #f0ad4e;
+    color: #222;
+    text-decoration: none;
+}
+
+/* Ensure .about-afrobeat-body inherits flex properties if not already covered by body tag */
+.page-about_afrobeat {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #333; /* Fallback background, image is in .about-afrobeat-body */
+}
+
+/* The class .about-afrobeat-body was used in HTML, let's ensure its background is applied */
+/* This might be redundant if .page-about_afrobeat is the main body class now */
+/* For consistency, I'll assume .page-about_afrobeat is the primary body class */
+
+/* Removing the old .about_afrobeat_body specific background if .page-about_afrobeat is used */
+/* .about-afrobeat-body {
+    background-image: url('mr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+} */
+
+/* Instead, apply background to the new body class if needed, or a wrapper div */
+/* If mr.jpg is the intended background for the whole page: */
+.page-about_afrobeat {
+    background-image: url('mr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    display: flex; /* Re-declare if overriding */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styles for African Music Page */
+.page-african-music {
+    /* background-image: url('mr.jpg'); */ /* Removed to use body gradient */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Ensure text is white for readability */
+}
+
+.page-african-music h1,
+.page-african-music h2,
+.page-african-music h3,
+.page-african-music p,
+.page-african-music li {
+    color: white; /* Ensure all common text elements are white */
+}
+
+/* Remove any specific rules for .page-african-music that might still reference mr.jpg or set conflicting text colors */
+/* For example, if there were rules like: */
+/* .page-african-music .some-class { background-image: url('mr.jpg'); } */
+/* These should be removed or updated. */
+
+/* Ensure any empty rulesets are removed to clean up the CSS */
+
+/* Musicians page specific styles */
+.page-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+.musician-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.musician-section:hover, .musician-section:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
+}
+
+.musician-section iframe {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.musician-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.musician-bio {
+  color: #4a5568 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.other-musicians {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.other-musicians:hover, .other-musicians:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
+}
+
+.other-musicians h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.other-musicians p {
+  color: #6a737d;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.iframe-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.iframe-gallery iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the musician stats table */
+.stats-card .styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are neat */
+    margin-top: 1rem; /* Space above the table */
+}
+
+.stats-card .styled-table th,
+.stats-card .styled-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    color: white; /* Ensure text is visible */
+}
+
+.stats-card .styled-table th {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for headers */
+    font-weight: 600;
+}
+
+.stats-card .styled-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle striping for rows */
+}
+
+/* Container for table to enable horizontal scrolling on small screens */
+.table-responsive-container {
+    overflow-x: auto;
+    margin-top: 1rem; /* Consistent with table margin if used directly */
+}
+
+/* Responsive adjustments for musicians page */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .musician-section {
+    padding: 1.5rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  .musician-section iframe {
+    height: 250px;
+  }
+  
+  .other-musicians {
+    padding: 1.5rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  .iframe-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .iframe-gallery iframe {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .musician-section iframe {
+    height: 200px;
+  }
+  
+  .iframe-gallery iframe {
+    height: 180px;
+  }
+}
+
+/* About Afrobeat specific styles - removed empty ruleset */
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  
+  .tagline-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .media-player-section {
+    padding: 2rem 1rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+  
+  .tagline-section h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-image-about {
+    background-image: url('fela.jpg'); /* Specific hero for this page */
+    height: 60vh; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px; /* Space below hero */
+}
+
+.hero-image-about .hero-text {
+    background-color: rgba(0,0,0,0.6); /* Darker overlay for text readability */
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.hero-image-about h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.4em;
+}
+
+.hero-image-about p {
+    font-size: 1.4em;
+}
+
+.about-afrobeat-content {
+    padding: 20px;
+    flex-grow: 1; /* Allow content to fill space if page is short */
+}
+
+.intro-section,
+.media-gallery-section,
+.external-links-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5); /* Consistent semi-transparent background */
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f0ad4e; /* Accent color for titles */
+}
+
+.section-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #eee; /* Lighter color for subtitles */
+}
+
+.page-content-text {
+    line-height: 1.7;
+    font-size: 1.1em;
+    max-width: 800px; /* Improve readability for text blocks */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media Gallery Section - General Styling */
+.media-gallery-section {
+    margin-bottom: 40px;
+}
+
+.media-gallery-section .media-item {
+    margin-bottom: 30px;
+}
+
+.media-gallery-section .media-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 5px;
+    border: 2px solid #444;
+}
+
+.media-gallery-section .media-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.external-links-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.external-links-list li {
+    margin-bottom: 10px;
+}
+
+.external-links-list li a {
+    color: #f0ad4e; /* Accent color for links */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.external-links-list li a:hover {
+    background-color: #f0ad4e;
+    color: #222;
+    text-decoration: none;
+}
+
+/* Ensure .about-afrobeat-body inherits flex properties if not already covered by body tag */
+.page-about_afrobeat {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #333; /* Fallback background, image is in .about-afrobeat-body */
+}
+
+/* The class .about-afrobeat-body was used in HTML, let's ensure its background is applied */
+/* This might be redundant if .page-about_afrobeat is the main body class now */
+/* For consistency, I'll assume .page-about_afrobeat is the primary body class */
+
+/* Removing the old .about_afrobeat_body specific background if .page-about_afrobeat is used */
+/* .about-afrobeat-body {
+    background-image: url('mr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+} */
+
+/* Instead, apply background to the new body class if needed, or a wrapper div */
+/* If mr.jpg is the intended background for the whole page: */
+.page-about_afrobeat {
+    background-image: url('mr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    display: flex; /* Re-declare if overriding */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styles for African Music Page */
+.page-african-music {
+    /* background-image: url('mr.jpg'); */ /* Removed to use body gradient */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Ensure text is white for readability */
+}
+
+.page-african-music h1,
+.page-african-music h2,
+.page-african-music h3,
+.page-african-music p,
+.page-african-music li {
+    color: white; /* Ensure all common text elements are white */
+}
+
+/* Remove any specific rules for .page-african-music that might still reference mr.jpg or set conflicting text colors */
+/* For example, if there were rules like: */
+/* .page-african-music .some-class { background-image: url('mr.jpg'); } */
+/* These should be removed or updated. */
+
+/* Ensure any empty rulesets are removed to clean up the CSS */
+
+/* Musicians page specific styles */
+.page-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+.musician-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.musician-section:hover, .musician-section:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
+}
+
+.musician-section iframe {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.musician-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.musician-bio {
+  color: #4a5568 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.other-musicians {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.other-musicians:hover, .other-musicians:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
+}
+
+.other-musicians h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.other-musicians p {
+  color: #6a737d;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.iframe-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.iframe-gallery iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the musician stats table */
+.stats-card .styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are neat */
+    margin-top: 1rem; /* Space above the table */
+}
+
+.stats-card .styled-table th,
+.stats-card .styled-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    color: white; /* Ensure text is visible */
+}
+
+.stats-card .styled-table th {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for headers */
+    font-weight: 600;
+}
+
+.stats-card .styled-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle striping for rows */
+}
+
+/* Container for table to enable horizontal scrolling on small screens */
+.table-responsive-container {
+    overflow-x: auto;
+    margin-top: 1rem; /* Consistent with table margin if used directly */
+}
+
+/* Responsive adjustments for musicians page */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .musician-section {
+    padding: 1.5rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  .musician-section iframe {
+    height: 250px;
+  }
+  
+  .other-musicians {
+    padding: 1.5rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  .iframe-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .iframe-gallery iframe {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .musician-section iframe {
+    height: 200px;
+  }
+  
+  .iframe-gallery iframe {
+    height: 180px;
+  }
+}
+
+/* About Afrobeat specific styles - removed empty ruleset */
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  
+  .tagline-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .media-player-section {
+    padding: 2rem 1rem;
+    margin: 0 1rem 2rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+  
+  .tagline-section h2 {
+    font-size: 1.25rem;
+  }
+  
+  .media-player-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .media-player-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  .site-footer p {
+    font-size: 0.8rem; /* Smaller footer text for mobile */
   }
 }
 
